@@ -1,5 +1,5 @@
 #include <iostream>
-#include <list>
+#include <deque>
 #define endl "\n"
 
 using namespace std;
@@ -16,27 +16,18 @@ int main() {
     bool flag = false;
     cin >> n;
 
-    list<int> l;
+    deque<int> l;
 
-    l.push_back(0);
+    l.push_back(n);
     last = 0;
 
-    char op[n];
-    for (int i = 0; i < n; i++) {
-        cin >> op[i];
-        if (op[i] == 'L') {
-            auto it = l.begin();
-            for (int i = 0; i < last; i++) {
-                it++;
-            }
-            l.insert(it, i + 1);
-        } else if (op[i] == 'R') {
-            last++;
-            auto it = l.begin();
-            for (int i = 0; i < last; i++) {
-                it++;
-            }
-            l.insert(it, i + 1);
+    string ops;
+    cin >> ops;
+    for (int i = n - 1; i >= 0; i--) {
+        if (ops[i] == 'L') {
+            l.push_back(i);
+        } else if (ops[i] == 'R') {
+            l.push_front(i);
         }
     }
     for (auto it : l) {
@@ -46,4 +37,5 @@ int main() {
         cout << it;
         flag = true;
     }
+    
 }
