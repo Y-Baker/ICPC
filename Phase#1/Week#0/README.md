@@ -3,12 +3,12 @@
 </div>
 
 <br />
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=1000&size=34&pause=1000&width=435&lines=WEEK+#1)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=1000&size=34&pause=1000&width=435&lines=WEEK+#0)](https://git.io/typing-svg)
 
 ## About:
-    Week 1: STL (vector , pair , stack , queue , deque, struct)
-    Problems: A to R
-    [click here] [https://vjudge.net/contest/599285]
+    Week 0: Revision sheet
+    Problems: A to L
+    [click here] [https://vjudge.net/contest/598414]
 <br />
 
 <br />
