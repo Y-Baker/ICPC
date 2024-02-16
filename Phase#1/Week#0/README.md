@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://postimg.cc/v4yMD0zK" alt="ICPC" width="80"/>
+  <img src="https://i.postimg.cc/W1F4WKJs/ICPC.png" alt="ICPC" width="80"/>
 </div>
 
 <br />
