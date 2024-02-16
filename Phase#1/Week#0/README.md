@@ -7,9 +7,9 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=1000&size=34&pause=1000&width=435&lines=WEEK+0)](https://git.io/typing-svg)
 
 ## About:
-    Week 0: Revision sheet
-    Problems: A to L
-    [click here] [https://vjudge.net/contest/598414]
+-  Week 0: Revision sheet
+-  Problems: A to L
+-  Go to [click here](https://vjudge.net/contest/598414)
 <br />
 
 <br />
