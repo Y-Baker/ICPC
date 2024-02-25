@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.postimg.cc/W1F4WKJs/ICPC.png" alt="ICPC" width="80"/>
+  <img src="https://i.postimg.cc/W1F4WKJs/ICPC.png" alt="ICPC" width="120"/>
 </div>
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=1000&size=34&pause=1000&width=435&lines=ICPC)](https://git.io/typing-svg)
