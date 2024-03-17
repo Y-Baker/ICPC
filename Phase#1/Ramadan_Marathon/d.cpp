@@ -63,3 +63,19 @@ int caloperation(int x, map<ll, ll> &mp) {
         return 1 + caloperation(x - 1, mp);
     }
 }
+
+int caloperation2(ll x) {
+    if (x == 1) {
+        return 0;
+    }
+    int count = 0;
+    while (x != 1) {
+        if (x & 1 == 0) {
+            x /= 2;
+        } else {
+            x--;
+        }
+        count++;
+    }
+    return count;
+}
