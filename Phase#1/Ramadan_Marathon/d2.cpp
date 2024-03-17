@@ -27,11 +27,10 @@ int main() {
             cin >> x;
             arr[i] = 0;
             while (x > 1) {
+                arr[i]++;
                 if (x & 1 == 1) {
-                    arr[i]++;
                     x--;
                 } else {
-                    arr[i]++;
                     x /= 2;
                 }
             }
