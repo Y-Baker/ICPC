@@ -1,0 +1,1 @@
+../../codeforces_problems/782A.cpp
