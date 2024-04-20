@@ -1,0 +1,1 @@
+../../codeforces_problems/43B.cpp
