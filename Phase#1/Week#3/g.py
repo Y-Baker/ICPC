@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""Run Time Error"""
+
 if __name__ == '__main__':
     t = 1
     # t = int(input())
