@@ -16,16 +16,30 @@ if __name__ == '__main__':
         if x == '':
             print(*res)
             continue
-        root = TreeNode(int(x[0]))
-        for c in x[1:]:
+        start = 0
+        if '(' not in x:
+            print(0)
+            continue
+        while x[start] != '(':
+            start += 1
+
+        root = TreeNode(int(x[:start]))
+        current = root
+        curr = ''
+        for idx, c in enumerate(x[start:]):
             if c == '(':
                 continue
             if c == ')':
-                root = root.parent
+                current = current.parent
                 continue
-            node = TreeNode(int(c))
-            node.parent = root
-            root.childs.append(node)
-            root = node
-            res[int(c)] = node.parent.val
+            curr += c
+            if x[idx + start + 1] not in ['(', ')']:
+                continue
+            num = int(curr)
+            curr = ''
+            node = TreeNode(num)
+            node.parent = current
+            current.childs.append(node)
+            current = node
+            res[num] = node.parent.val
         print(*res[1:])
