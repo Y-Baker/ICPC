@@ -14,64 +14,54 @@ void fastIO() {
     cout.tie(NULL);
 }
 
-int binarySearch(const vector<int>& arr, int lowerRange, int upperRange) {
-    int l = 0;
-    int r = arr.size() - 1;
-
-    while (l <= r) {
-        int mid = l + (r - l) / 2;
-        if (arr[mid] < lowerRange) {
-            l = mid + 1;
-        } else if (arr[mid] > upperRange) {
-            r = mid - 1;
-        } else {
-            return mid;
-        }
-    }
-    return -1;
-}
-
-
 
 int main() {
     fastIO();
     int t;
     cin >> t;
 
-    for (int _ = 0; _ < t; _++) {
+    while (t--) {
         int n, q;
         cin >> n >> q;
         string one, two;
         cin >> one >> two;
-
-        unordered_map<char, vector<int>> mapp;
+        vector<int> freqA = vector<int>(26, 0);
+        vector<int> freqB = vector<int>(26, 0);
+        vector<vector<int>> prefixFreqA (n, vector<int>(26, 0));
+        vector<vector<int>> prefixFreqB (n, vector<int>(26, 0));
         for (int i = 0; i < n; i++) {
-            mapp[two[i]].push_back(i);
+            freqA[one[i] - 'a'] += 1;
+            freqB[two[i] - 'a'] += 1;
+            vector<int> tmpA = freqA;
+            vector<int> tmpB = freqB;
+            prefixFreqA[i] = tmpA;
+            prefixFreqB[i] = tmpB;
         }
-
         while (q--) {
             int i, j;
             cin >> i >> j;
             i -= 1;
             j -= 1;
             int cnt = 0;
-            unordered_map<char, vector<int>> maptmp = mapp;
 
-            for (int k = i; k <= j; k++) {
-                if (!maptmp[one[k]].empty()) {
-                    int idx = binarySearch(maptmp[one[k]], i, j);
-                    if (idx == -1) {
-                        cnt += 1;
-                    } else {
-                        maptmp[one[k]].erase(maptmp[one[k]].begin() + idx);
-                    }
+            fill(freqA.begin(), freqA.end(), 0);
+            fill(freqB.begin(), freqB.end(), 0);
+
+            for (int k = 0; k < 26; k++) {
+                if (i > 0) {
+                    freqA[k] = prefixFreqA[j][k] - prefixFreqA[i - 1][k];
+                    freqB[k] = prefixFreqB[j][k] - prefixFreqB[i - 1][k];
                 } else {
-                    cnt += 1;
+                    freqA[k] = prefixFreqA[j][k];
+                    freqB[k] = prefixFreqB[j][k];
                 }
             }
-            cout << cnt << endl;
+
+            for (int k = 0; k < 26; k++) {
+                cnt += abs(freqA[k] - freqB[k]);
+            }
+
+            cout << cnt / 2 << endl;
         }
     }
-
-    return 0;
 }
