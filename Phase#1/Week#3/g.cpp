@@ -5,6 +5,8 @@
 
 using namespace std;
 
+// wrong answer on test 18
+
 void fastIO() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

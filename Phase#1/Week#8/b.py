@@ -1,0 +1,1 @@
+../../codeforces/Problems/812C.py
